@@ -1,11 +1,12 @@
 #include <string.h>
+#include "Node.h"
 
 class Graph {
     private:
         int order;
-        bool directed;
-        bool weighted;
         int** adjMatrix;
+        Node* firstNode;
+        Node* lastNode;
 
     public:
         Graph (int numVertices);
@@ -16,7 +17,11 @@ class Graph {
 
 Graph::Graph (int numVertices) {
     this->order = numVertices;
-    this->directed = directed;
-    this->weighted = weighted;
-    this->adjMatrix = new int*[numVertices];
+    this->adjMatrix = new int*[this->order];
+    for (int i = 0; i < this->order; i++) {
+        adjMatrix[i] = new int[this->order];
+        for (int j = 0; j < this->order; j++) {
+            adjMatrix[i][j] = 0;
+        }
+    }
 }
