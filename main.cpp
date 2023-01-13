@@ -1,10 +1,11 @@
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
 #include <fstream>
 #include <string>
 #include <sstream>
 #include "Leitura.h"
-
-using namespace std;
+#include "Grafo/Graph.h"
 
 int main(int argc, char** argv) {
     string fileName;
@@ -14,11 +15,11 @@ int main(int argc, char** argv) {
     bool pondered = false;
     if (pondered) {
         while(file >> v1 >> v2 >> weight) {
-        cout << "Vertice " << v1 << " aponta para " << v2 << " com peso " << weight << endl;
+            std::cout << "Vertice " << v1 << " aponta para " << v2 << " com peso " << weight << std::endl;
         }
     } else {
         while(file >> v1 >> v2) {
-            cout << "Vertice " << v1 << " aponta para " << v2 << " com peso " << 0 << endl;
+            std::cout << "Vertice " << v1 << " aponta para " << v2 << " com peso " << 0 << std::endl;
         }
     }
 }
