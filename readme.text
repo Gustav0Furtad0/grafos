@@ -1,0 +1,9 @@
+Compile and Run
+
+g++ main.cpp -o main.exe
+
+./main.exe {path} {pondered} {directed}
+
+path = poderedTxt/{$archiveName}.txt or nonPonderedTxt/{$archiveName}.txt
+pondered = 1 for pondered, 0 for nonPondered
+directed = 1 for directed, 0 for nonDirected
