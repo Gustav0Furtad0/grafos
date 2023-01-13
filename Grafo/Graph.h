@@ -2,20 +2,20 @@
 
 class Graph {
     private:
-        int numVertices;
+        int order;
         bool directed;
         bool weighted;
         int** adjMatrix;
 
     public:
-        Graph (int numVertices, bool directed, bool weighted);
-        int retornaVertices(){ return numVertices; };
+        Graph (int numVertices);
+        int retornaVertices(){ return order; };
         void leituraArquivoGrafo(bool pondered, bool directed);
     
 };
 
-Graph::Graph (int numVertices, bool directed, bool weighted) {
-    this->numVertices = numVertices;
+Graph::Graph (int numVertices) {
+    this->order = numVertices;
     this->directed = directed;
     this->weighted = weighted;
     this->adjMatrix = new int*[numVertices];

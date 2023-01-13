@@ -5,8 +5,8 @@ A entrada dos grafo será em arquico .dat
 
 Compile and Run
 
-g++ main.cpp -o main.exe
+g++ main.cpp Leitura.h Grafo/*.h Grafo/*.cpp -o main.exe
 
 ./main.exe <arquivo_entrada> <arquivo_saida>
-
-<arquivo_entrada> = estruturas/{$archiveName}
+    <arquivo_entrada> = estruturas/$archiveName
+    <arquivo_saida>   = resultados/$archiveName
