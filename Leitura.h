@@ -5,6 +5,7 @@
 using namespace std;
 
 ifstream leitura(string arquivo) {
+
     ifstream file(arquivo);
     if(!file.is_open()) {
         cout << "Failed to open file" << endl;
