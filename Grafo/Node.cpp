@@ -10,7 +10,6 @@ using namespace std;
 
 // Constructor
 Node::Node(int id){
-
     this->id = id;
     this->in_degree = 0;
     this->out_degree = 0;
@@ -18,7 +17,6 @@ Node::Node(int id){
     this->first_edge = nullptr;
     this->last_edge = nullptr;
     this->next_node = nullptr;
-
 };
 
 // Destructor

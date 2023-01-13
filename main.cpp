@@ -8,19 +8,10 @@
 #include "Leitura.h"
 // #include "Grafo/Graph.h"
 
-std::vector<std::string> split(const std::string& text, char sep)
-{
-    std::vector<std::string> tokens;
-    std::size_t start = 0, end = 0;
+using namespace std;
 
-    while ((end = text.find(sep, start)) != std::string::npos)
-    {
-        tokens.push_back(text.substr(start, end - start));
-        start = end + 1;
-    }
-
-    tokens.push_back(text.substr(start));
-    return tokens;
+Graph* leituraGrafo() {
+    
 }
 
 int main(int argc, char** argv) {
@@ -43,21 +34,17 @@ int main(int argc, char** argv) {
     // Tendo em vista que não é necessário gerar o arquivo .dot, são puladas as posições
     file >> descarte;
     file.ignore(9, '\n');
-    for (int i = 0; i < numNodes; i++) {
-        // double v1, v2;
-        // file >> v1 >> v2;
-        // std::cout << "Vertice " << v1 << " aponta para " << v2  << std::endl;
-
-        file.ignore(50, '\n');
-    }
+    for (int i = 0; i < numNodes; i++) file.ignore(50, '\n');
 
     //Le pesos
     cout << "Weight:" << endl;
     file >> descarte;
     file.ignore(100, '\n');
+    int pesos[numNodes];
     for (int i = 0; i < numNodes; i++) {
         int weight;
         file >> weight;
+        pesos[i] = weight;
         std::cout << "Id: " << i+1 << " peso " << weight  << std::endl;
     }
 
@@ -74,9 +61,9 @@ int main(int argc, char** argv) {
 
     for (int i = 0; i < numNodes; i++) {
         for(int j = 0; j < numNodes; j++) {
-            cout << matrizAdjacency[i][j] << " ";
+            //cout << matrizAdjacency[i][j] << " ";
         }
-        cout << endl;
+        //cout << endl;
     }
 
 
