@@ -6,12 +6,17 @@
 #include <sstream>
 #include <vector>
 #include "Leitura.h"
-// #include "Grafo/Graph.h"
+#include "Grafo/Graph.h"
 
 using namespace std;
 
-Graph* leituraGrafo() {
+Graph* leituraGrafo(int* weight, int** matrizAdjacency, int numNodes) {
+    Graph* grafo = new Graph(numNodes);
+    for (int i = 0; i < numNodes; i++) {
+        grafo->insertNode(i+1);
+    }
     
+    return grafo;
 }
 
 int main(int argc, char** argv) {
@@ -58,6 +63,8 @@ int main(int argc, char** argv) {
             file >> matrizAdjacency[i][j];
         }
     }
+
+    //Cria grafo
 
     for (int i = 0; i < numNodes; i++) {
         for(int j = 0; j < numNodes; j++) {
